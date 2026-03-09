@@ -2,7 +2,7 @@
 
 This package implements a custom calculation of edge forces used for the heatflux and stress tensors in lammps using automatic differentiation of the atomic energies (see https://link.aps.org/doi/10.1103/PhysRevMaterials.8.033802).
 
-**NOTE:** This package is compatible with [NequIP](https://github.com/mir-group/nequip) **0.6.1** but *not* newer versions.
+**NOTE:** This package is compatible with [Allegro](https://github.com/mir-group/allegro) commit [`fa538bc`](https://github.com/mir-group/allegro/commit/fa538bc) (NequIP 0.6.1). It should **not** be used with NequIP-based models with more than 1 message-passing step, as contributions from atoms beyond the cutoff would be missed.
 
 ## Installation
 
