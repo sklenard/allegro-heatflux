@@ -1,6 +1,8 @@
 # Allegro-heatflux
 
-This package implements a custom calculation of partial forces used for the heatflux and stress tensors in lammps using automatic differentiation of the atomic energies (see https://arxiv.org/abs/2307.02327).
+This package implements a custom calculation of edge forces used for the heatflux and stress tensors in lammps using automatic differentiation of the atomic energies (see https://link.aps.org/doi/10.1103/PhysRevMaterials.8.033802).
+
+**NOTE:** This package is compatible with [NequIP](https://github.com/mir-group/nequip) **0.6.1** but *not* newer versions.
 
 ## Installation
 
@@ -27,5 +29,5 @@ nequip-deploy build --train-dir ${train_folder} model-lmp.pth
 cp ${train_folder}/config.yaml.bak ${train_folder}/config.yaml
 ```
 
-**NOTE:** The deployed model will be **only** compatible with LAMMPS as it outputs dummy virial/stress tensors. The calculation of virial/stress tensors from partial forces will be probably implemented in the future.
+**NOTE:** The deployed model will be **only** compatible with LAMMPS as it outputs a zero (dummy) virial/stress tensor — the actual stress is computed from the edge forces directly in LAMMPS.
 
